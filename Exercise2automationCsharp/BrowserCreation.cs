@@ -55,7 +55,7 @@ namespace Exercise2automationCsharp
 
     public void SelectGender()
     {
-      //driver.FindElement(Female).Click();
+      driver.FindElement(Female).Click();
       //driver.FindElement(Male).Click();
     }
 

@@ -9,7 +9,8 @@ namespace Exercise2automationCsharp
   [TestClass]
   public class UnitTest1
   {
-    public string ClassNameToFind = "_8est";
+    public string ClassNameToFindExpectedtitle = "_8est";
+    public string ClassNameToFindExpectedText = "_8eso";
 
     [TestMethod]
     public void FaceboSingUp()
@@ -20,9 +21,9 @@ namespace Exercise2automationCsharp
       BrowserCreation SetUp = new BrowserCreation(driver);
       SetUp.TypeInfoUser();
 
-      // Validate text 
+      // Validate text Sign Up
       var expectedtitle = "Sign Up";
-      var actualtitle = driver.FindElement(By.ClassName(ClassNameToFind)).Text.ToString();
+      var actualtitle = driver.FindElement(By.ClassName(ClassNameToFindExpectedtitle)).Text.ToString();
       Assert.AreEqual(expectedtitle, actualtitle);
 
       //Select different default birthday 
@@ -31,6 +32,11 @@ namespace Exercise2automationCsharp
 
       //Select Female gender input
       SetUp.SelectGender();
+
+      // Validate text Connect with friends and the world around you on Facebook.
+      var expectedText = "Connect with friends and the world around you on Facebook.";
+      var actualText = driver.FindElement(By.ClassName(ClassNameToFindExpectedText)).Text.ToString();
+      Assert.AreEqual(expectedText, actualText);
     }
   }
 }
